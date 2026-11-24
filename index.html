@@ -12,7 +12,17 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-X3K20Y1VHK');
+  // Anonymous visitor number per browser; "?me" marks Aria's own browsers, "?notme" undoes it.
+  var vid = '', me = location.protocol === 'file:';
+  try {
+    vid = localStorage.getItem('al_vid') || '';
+    if (!vid) { vid = Math.random().toString(36).slice(2, 8); localStorage.setItem('al_vid', vid); }
+    var q = location.search;
+    if (/[?&]me(=|&|$)/.test(q)) localStorage.setItem('al_me', '1');
+    if (/[?&]notme(=|&|$)/.test(q)) localStorage.removeItem('al_me');
+    if (localStorage.getItem('al_me') === '1') me = true;
+  } catch (e) {}
+  gtag('config', 'G-X3K20Y1VHK', { user_properties: { visitor_id: vid || 'none', is_aria: me ? 'yes' : 'no' } });
 </script>
 </head>
 <body>
