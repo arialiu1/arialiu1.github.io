@@ -25,7 +25,9 @@ details[open] summary { margin-bottom: 1rem; }
 .top img { flex: none; width: 150px; height: auto; border-radius: 4px; }
 .icons { margin-top: 1rem; display: flex; gap: 1rem; }
 .icons a { color: var(--muted); line-height: 0; }
-.icons a:hover { color: var(--link); }
+.icons a.scholar { color: #4285F4; }
+.icons a.linkedin { color: #0A66C2; }
+.icons a:hover { opacity: .75; }
 .icons svg { width: 22px; height: 22px; fill: currentColor; }
 @media (max-width: 560px) {
   .top { flex-direction: column-reverse; gap: 1.25rem; }
