@@ -33,3 +33,5 @@ details[open] summary { margin-bottom: 1rem; }
   .top { flex-direction: column-reverse; gap: 1.25rem; }
   .top img { width: 120px; height: 120px; }
 }
+.small b a { text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--line); }
+.small b a:hover { text-decoration-color: currentColor; }
