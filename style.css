@@ -22,7 +22,7 @@ h1.paper { font-size: 1.5rem; line-height: 1.3; }
 summary { cursor: pointer; }
 details[open] summary { margin-bottom: 1rem; }
 .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; }
-.top img { flex: none; width: 150px; height: 150px; border-radius: 50%; object-fit: cover; object-position: 50% 4%; }
+.top > img { flex: none; width: 150px; height: 150px; border-radius: 50%; object-fit: cover; object-position: 50% 4%; }
 .icons { margin-top: 1rem; display: flex; gap: 1rem; }
 .icons a { color: var(--muted); line-height: 0; }
 .icons a.scholar { color: #4285F4; }
@@ -31,10 +31,13 @@ details[open] summary { margin-bottom: 1rem; }
 .icons svg { width: 22px; height: 22px; fill: currentColor; }
 @media (max-width: 560px) {
   .top { flex-direction: column-reverse; gap: 1.25rem; }
-  .top img { width: 120px; height: 120px; }
+  .top > img { width: 120px; height: 120px; }
 }
 .small b a { text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--line); }
 .small b a:hover { text-decoration-color: currentColor; }
 .cat { text-align: right; margin: 1rem 0 0; line-height: 0; }
 .cat img { height: auto; }
-@media (prefers-color-scheme: dark) { .cat img { background: #f4f3ef; border-radius: 6px; padding: 4px 6px; } }
+@media (prefers-color-scheme: dark) { .cat img, .cat-top img { background: #f4f3ef; border-radius: 6px; padding: 4px 6px; } }
+.cat-top { position: relative; height: 0; margin: 0; line-height: 0; }
+.cat-top img { position: absolute; left: 0; bottom: .5rem; height: auto; }
+@media (max-width: 560px) { .cat-top { height: auto; margin: 0 0 .4rem; } .cat-top img { position: static; } }

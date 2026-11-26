@@ -32,6 +32,7 @@
 
 <header class="top">
   <div>
+    <p class="cat-top" id="cat-top"></p>
     <h1>Aria Liu</h1>
     <p>Hi! I&rsquo;m a second-year PhD student in Finance at UCLA Anderson School of Management.</p>
     <p>Email: <a href="mailto:aria.liu.phd@anderson.ucla.edu">aria.liu.phd@anderson.ucla.edu</a></p>
@@ -83,12 +84,17 @@
 
 <p class="cat" id="cat"></p>
 <script>
-  // One of five cats at random on each visit.
+  // Two different cats of the five at random on each visit: a small one at the top left, one at the bottom right.
   (function () {
     var cats = [['loaf', 81, 41], ['long', 46, 73], ['headphones', 55, 62], ['box', 70, 47], ['sleeping', 76, 45]];
-    var c = cats[Math.floor(Math.random() * cats.length)], img = new Image();
-    img.src = 'cats/cat_' + c[0] + '.png'; img.width = c[1]; img.height = c[2]; img.alt = '';
-    document.getElementById('cat').appendChild(img);
+    var i = Math.floor(Math.random() * 5), j = (i + 1 + Math.floor(Math.random() * 4)) % 5;
+    function put(id, c, s) {
+      var img = new Image();
+      img.src = 'cats/cat_' + c[0] + '.png'; img.width = Math.round(c[1] * s); img.height = Math.round(c[2] * s); img.alt = '';
+      document.getElementById(id).appendChild(img);
+    }
+    put('cat-top', cats[i], 0.5);
+    put('cat', cats[j], 1);
   })();
 </script>
 
