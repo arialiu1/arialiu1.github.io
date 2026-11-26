@@ -35,3 +35,5 @@ details[open] summary { margin-bottom: 1rem; }
 }
 .small b a { text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--line); }
 .small b a:hover { text-decoration-color: currentColor; }
+.cat { text-align: right; margin: 1rem 0 0; line-height: 0; }
+.cat img { width: 96px; height: auto; }
