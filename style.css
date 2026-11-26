@@ -36,4 +36,5 @@ details[open] summary { margin-bottom: 1rem; }
 .small b a { text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--line); }
 .small b a:hover { text-decoration-color: currentColor; }
 .cat { text-align: right; margin: 1rem 0 0; line-height: 0; }
-.cat img { width: 60px; height: auto; }
+.cat img { height: auto; }
+@media (prefers-color-scheme: dark) { .cat img { background: #f4f3ef; border-radius: 6px; padding: 4px 6px; } }

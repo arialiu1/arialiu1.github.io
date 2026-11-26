@@ -81,7 +81,16 @@
   </ol>
 </details>
 
-<p class="cat"><img src="cat.png" alt="" width="60" height="56"></p>
+<p class="cat" id="cat"></p>
+<script>
+  // One of five cats at random on each visit.
+  (function () {
+    var cats = [['loaf', 81, 41], ['long', 46, 73], ['headphones', 55, 62], ['box', 70, 47], ['sleeping', 76, 45]];
+    var c = cats[Math.floor(Math.random() * cats.length)], img = new Image();
+    img.src = 'cats/cat_' + c[0] + '.png'; img.width = c[1]; img.height = c[2]; img.alt = '';
+    document.getElementById('cat').appendChild(img);
+  })();
+</script>
 
 </main>
 </body>
